@@ -1,1 +1,1 @@
-# CSC307GroupProject
+# CSC307GroupProject-Inventory 
