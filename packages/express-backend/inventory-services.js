@@ -1,10 +1,10 @@
 import mongoose from "mongoose";
-import inventoryModel from "./inventory"
+import inventoryModel from "./inventory.js"
 
 mongoose.set("debug", true);
 
 mongoose
-  .connect("mongodb://localhost:27017/users", {
+  .connect("mongodb://localhost:27017/inventory", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -32,11 +32,11 @@ function findStoreById(id){
 }
 
 function findStoreByName(name){
-    return inventoryModel.find({name:name});
+    return inventoryModel.find({"store.name":name});
 }
 
-function findStoreByLoc(location){
-    return inventoryModel.find({location:location});
+function findStoreByLoc(city){
+    return inventoryModel.find({"store.location.city":city});
 }
 
 function addStore(store){
