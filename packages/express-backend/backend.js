@@ -1,7 +1,7 @@
 // backend.js
+import inventoryServices from "./inventory-services.js";
 import express from "express";
 import cors from "cors";
-import inventoryServices from "./inventory-services.js";
 
 const app = express();
 const port = 8000;

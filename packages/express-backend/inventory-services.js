@@ -1,14 +1,14 @@
+import dotenv from "dotenv";
+dotenv.config();
 import mongoose from "mongoose";
 import inventoryModel from "./inventory.js"
-
+ 
 mongoose.set("debug", true);
 
+
 mongoose
-  .connect("mongodb://localhost:27017/inventory", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => console.log("Connected to MongoDB"))
+  .connect(process.env.MONGODB_URI)
+  .then(() => console.log("Connected to MongoDB Atlas"))
   .catch((error) => console.log(error));
 
 function getStores(name, location){
