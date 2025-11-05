@@ -6,16 +6,12 @@ db.store_list.insertOne({
     city: " ",
     state: " "
   },
-  inventory: [
-    { 
-      name: " ", 
-      SKU: " ",
-      total_quantity: " ""
-      product_photo: " ",
-      price: " ",
-      },
-    }
-  ]
+  inventory: { 
+    name: " ", 
+    SKU: " ",
+    total_quantity: " ""
+    product_photo: " ",
+    price: " ",
   }
 });
 */
@@ -30,7 +26,7 @@ const ProductSchema = new mongoose.Schema(
         quantity_on_floor: { type: Number, min: 0, default: 0 },
         quantity_in_back:  { type: Number, min: 0, default: 0 },
         incoming_quantity: { type: Number, min: 0, default: 0 },
-        product_photo: {type: String, required: true},
+        product_photo: { type: String, required: true },
         price: { type: Number, min: 0, default: 0, required: true },
         // pending_shipping : { type: Number, min: 0, default: 0 }
     }

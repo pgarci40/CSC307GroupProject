@@ -21,18 +21,19 @@ function getInventory(SKU, name){
     else if (!SKU && name){
         promise = findProductByName(name);
     }
+    return promise;
 }
 
 //Use this for the search bar on the main product page 
 
 // Filter via a given product name
 function findProductByName(name){
-    return inventoryModel.find({"store.inventory.name":name});
+    return inventoryModel.find({"inventory.name":name});
 }
 
 // Filter via a given product SKU
 function findProductBySKU(SKU){
-    return inventoryModel.find({"store.inventory.SKU":SKU});
+    return inventoryModel.find({"inventory.SKU":SKU});
 }
 
 // Use these to update the database quantity by given amount 
@@ -57,7 +58,6 @@ function addProduct(product){
     const promise = productToAdd.save();
     return promise;
 }
-
 
 export default{
     getInventory,

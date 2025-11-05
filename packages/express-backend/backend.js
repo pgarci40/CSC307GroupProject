@@ -11,7 +11,7 @@ app.use(express.json());
 
 app.get("/inventory", (req, res) => {
   const name = req.query.name;
-  const SKU = req.query.SKU
+  const SKU = req.query.SKU;
   
   const result = inventoryServices.getInventory(name, SKU);
   result
