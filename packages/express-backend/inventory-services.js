@@ -5,56 +5,65 @@ import inventoryModel from "./inventory.js"
  
 mongoose.set("debug", true);
 
-
 mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => console.log("Connected to MongoDB Atlas"))
   .catch((error) => console.log(error));
 
-function getStores(name, location){
+function getInventory(SKU, name){
     let promise;
-    if(name === undefined && location === undefined){
+    if (name === undefined && SKU === undefined){
         promise = inventoryModel.find();
     }
-    else if (name && !location){
-        promise = findStoreByName(name);
+    else if (SKU && !name){
+        promise = findProductBySKU(SKU);
     }
-    else if (!name && location){
-        promise = findStoreByLoc(location);
-    }
-    else if (name && location){
-        promise = inventoryModel.find({name:name, location:location});
+    else if (!SKU && name){
+        promise = findProductByName(name);
     }
     return promise;
 }
 
-function findStoreById(id){
-    return inventoryModel.findById(id);
+//Use this for the search bar on the main product page 
+
+// Filter via a given product name
+function findProductByName(name){
+    return inventoryModel.find({"inventory.name":name});
 }
 
-function findStoreByName(name){
-    return inventoryModel.find({"store.name":name});
+// Filter via a given product SKU
+function findProductBySKU(SKU){
+    return inventoryModel.find({"inventory.SKU":SKU});
 }
 
-function findStoreByLoc(city){
-    return inventoryModel.find({"store.location.city":city});
+// Use these to update the database quantity by given amount 
+function updateQuantityFloor(SKU, update_val){
+    return inventoryModel.findOneAndUpdate(
+        SKU, 
+        {$inc : {quantity_on_floor: update_val}},   
+        {new: true} 
+    );
 }
 
-function addStore(store){
-    const storeToAdd = new inventoryModel(store);
-    const promise = storeToAdd.save();
+function updateQuantityBack(SKU, update_val){
+    return inventoryModel.findOneAndUpdate(
+        SKU, 
+        {$inc : {quantity_in_back: update_val}},  
+        {new: true} 
+    );
+}
+
+function addProduct(product){
+    const productToAdd = new inventoryModel(product);
+    const promise = productToAdd.save();
     return promise;
-}
-
-function deleteStoreById(id){
-    return inventoryModel.findByIdAndDelete(id);
 }
 
 export default{
-    getStores,
-    findStoreById,
-    findStoreByLoc,
-    findStoreByName,
-    addStore,
-    deleteStoreById
+    getInventory,
+    findProductByName,
+    findProductBySKU,
+    updateQuantityFloor,
+    updateQuantityBack,
+    addProduct,
 };
