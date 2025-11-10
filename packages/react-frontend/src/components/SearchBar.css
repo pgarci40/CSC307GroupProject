@@ -7,7 +7,6 @@
     box-shadow: 0px 0px 0px #ddd;
     display: flex;
     align-items: center;
-    margin-top: -220px;
 }
 
 input{
@@ -22,3 +21,4 @@ input{
 input:focus{
     outline: none;
 }
+

@@ -49,14 +49,14 @@
   transition: opacity 0.2s ease;
 }
 
-.logout {
+.sign-in {
   width: 100px;
   height: auto;
   border-radius: 6px;    
   transition: all 0.3s ease;
 }
 
-.logout:hover {
+.sign-in:hover {
   background-color: #CFF7D3;
   color: #26a69a;
 }

@@ -19,7 +19,6 @@ function SearchBar({onSearch}){
                 onChange={handleChange}
             />
         </div>
-        
     );
 }
 
