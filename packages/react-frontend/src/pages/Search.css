@@ -1,0 +1,19 @@
+.hero {
+  height: 100vh; 
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: linear-gradient(180deg, #26a69a 0%, #2e7d68 100%);
+  color: white;
+  padding-left: 4rem; 
+  margin-top: 0;
+}
+
+.search-bar-container {
+  width: 40%;
+  margin:auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
