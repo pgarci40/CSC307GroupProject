@@ -44,7 +44,7 @@ const LocatationSchema = new mongoose.Schema(
 const StoreSchema = new mongoose.Schema(
     {
       name: { type: String, required: true, trim: true },
-      location: [LocatationSchema],
+      location: {LocatationSchema},
       inventory: {type: [ProductSchema], default: []},
     },
   { collection: "store_list" }
