@@ -1,6 +1,6 @@
 .product-card{
   width: 260px;              
-  border: 2px solid #0f0f0f; /* thin black border like the picture */
+  border: 2px solid #0f0f0f; 
   border-radius: 8px;
   background: #fff;
   overflow: hidden;
@@ -8,14 +8,15 @@
 }
 
 .pc-title{
-  margin: 12px 12px 0 12px;
+  margin: 0;
+  padding: 12px 12px 0 12px;
   font-size: 1.15rem;
   font-weight: 800;
   color: #0f0f0f;
 }
 
 .pc-image{
-  height: 210px;             /* big image area */
+  height: 210px;             
   margin: 8px 12px;
   border: 1.5px solid #0f0f0f;
   display: grid;
@@ -31,7 +32,7 @@
 .pc-meta{
   padding: 10px 12px 14px 12px;
   border-top: 1.5px solid #0f0f0f;
-  background: #eaf7ec;       /* soft green like your theme */
+  background: #eaf7ec;       
   font-weight: 700;
   color: #0f0f0f;
 }

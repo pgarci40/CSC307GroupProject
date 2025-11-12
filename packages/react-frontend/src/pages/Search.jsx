@@ -20,17 +20,18 @@ function Search({productsData}){
     <section className="hero">
       <div className="search-line">
         <div className="search-bar-container">
-          {/* <SearchBar onSearch={setTerm} /> */}
+          <SearchBar onSearch={setTerm} />
         </div>
+
         <div className="add-product">
           <img src={addProductIcon} alt="Add Product Button" />
         </div>
+        
       </div>
 
-      <div className="filter-bar">
+      {/* <div className="filter-bar">
 
-
-      </div>
+      </div> */}
 
       <div className="results-wrap">
         <div className="results-grid">
