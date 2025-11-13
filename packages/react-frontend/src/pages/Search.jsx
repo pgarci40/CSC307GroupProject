@@ -1,11 +1,10 @@
 import "./Search.css";
 import addProductIcon from "../assets/add-product-button.svg";
+import removeProductIcon from "../assets/remove-product-button.svg";
 import SearchBar from "../components/SearchBar";
 import ProductCard from "../components/ProductCard";
 import AddProductPopUp from "../components/AddProductPopUp";
 import React, { useState } from "react";
-
-
 
 function Search({productsData, onProductAdded}){
     const [term, setTerm] = useState("");
@@ -77,26 +76,35 @@ function Search({productsData, onProductAdded}){
         <div className="search-bar-container">
           <SearchBar onSearch={setTerm} />
         </div>
-
-        {/* Add Product trigger */}
-        <button
-          className="add-product"
-          onClick={handleOpen}
-          aria-label="Add Product"
-          title="Add Product"
-          style={{ border: "none"}}
-        >
-          <img src={addProductIcon} alt="" />
-        </button>
+        <div className="update-product-buttons">
+          <button
+            className="add-product"
+            onClick={handleOpen}
+            aria-label="Add Product"
+            title="Add Product"
+            style={{ border: "none"}}
+          >
+            <img src={addProductIcon} alt="" />
+          </button>
+          <button
+            className="remove-product"
+            // onClick={handleOpen}
+            aria-label="Remove Product"
+            title="Remove Product"
+            style={{ border: "none"}}
+          >
+            <img src={removeProductIcon} alt="" />
+          </button>
+        </div>
       </div>
 
-      <div className="results-wrap">
+      {/* <div className="results-wrap">
         <div className="results-grid">
           {productsData.map((p) => (
             <ProductCard key={p.SKU} {...p} />
           ))}
         </div>
-      </div>
+      </div> */}
 
       {/* Modal */}
       <AddProductPopUp

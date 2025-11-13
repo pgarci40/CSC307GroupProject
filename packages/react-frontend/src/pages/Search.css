@@ -27,21 +27,43 @@
   align-items: center; 
 }
 
+.update-product-buttons{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-right: 7.5%;
+}
+
 .add-product {
   cursor: pointer;
   display: flex;
   align-items: center;
   flex-direction: column;
   border-radius: 6px;
-  margin-right: 7.5%;
   transition: all 0.3s ease;
   border: none;
   background: transparent;
   padding: 0;
 }
-/* .add-product svg { display: block; } */
 
 .add-product:hover{
+  background-color: #CFF7D3;
+  color: #26a69a;
+}
+
+.remove-product {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
+.remove-product:hover{
   background-color: #CFF7D3;
   color: #26a69a;
 }
