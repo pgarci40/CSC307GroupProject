@@ -9,8 +9,9 @@ function App() {
   
   const [products, setProducts] = useState([]);
   
+  // Send to change the middle id depending on the store
   useEffect(() => {
-    fetch("http://localhost:8000/inventory/products")
+    fetch("http://localhost:8000/inventory/690aaa9be73854e0640a1927/products")
       .then((res) => res.json())
       .then((data) => {
         const cardData = (data || []).map((p) => ({
@@ -25,13 +26,16 @@ function App() {
       })
       .then((error) => {console.log(error); });
   }, []);
-  
+
+  const handleProductAdded = (cardData) => {
+    setProducts((prev) => [cardData, ...prev]);
+  };
   
   return (
     <div>
       <NavbarSearch />
       <Search 
-        productsData={products}
+        productsData={products} onProductAdded={handleProductAdded}
       />
 
       {/* <Navbar />

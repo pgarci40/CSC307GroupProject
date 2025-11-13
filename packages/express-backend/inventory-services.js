@@ -53,10 +53,24 @@ function updateQuantityBack(SKU, update_val){
     );
 }
 
-function addProduct(product){
-    const productToAdd = new inventoryModel(product);
-    const promise = productToAdd.save();
-    return promise;
+function addProduct(storeID, product) {
+    const productDetails = {
+        name: product.name,
+        SKU: product.SKU,
+        total_quantity: Number(product.total_quantity ?? product.quantity ?? 0),
+        description: product.description || "",
+        price: Number(product.price ?? 0),
+        product_photo: product.product_photo || "",
+        // if you track these separately, default them explicitly:
+        quantity_on_floor: Number(product.quantity_on_floor ?? 0),
+        quantity_in_back: Number(product.quantity_in_back ?? 0),
+        incoming_quantity: Number(product.incoming_quantity ?? 0),
+    };
+    return inventoryModel.findByIdAndUpdate(
+        storeID,
+        {$push: {inventory:productDetails}},
+        {new: true}
+    );
 }
 
 export default{
