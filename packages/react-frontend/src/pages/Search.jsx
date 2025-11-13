@@ -98,13 +98,13 @@ function Search({productsData, onProductAdded}){
         </div>
       </div>
 
-      {/* <div className="results-wrap">
+      <div className="results-wrap">
         <div className="results-grid">
           {productsData.map((p) => (
             <ProductCard key={p.SKU} {...p} />
           ))}
         </div>
-      </div> */}
+      </div>
 
       {/* Modal */}
       <AddProductPopUp
