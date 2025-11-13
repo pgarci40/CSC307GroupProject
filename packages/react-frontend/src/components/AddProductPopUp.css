@@ -41,6 +41,12 @@
   line-height: 1;
   cursor: pointer;
   color:black;
+  transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+  background-color: transparent;
+  color: #26a69a;
 }
 
 /* body */
@@ -77,6 +83,7 @@
   margin-top: 10px;
   color: black
 }
+
 .btn {
   border-radius: 8px;
   padding: 10px 14px;
@@ -91,8 +98,21 @@
 .btn.primary {
   background: #26a69a;
   color: black;
+  transition: all 0.3s ease;
 }
+
+.btn.primary:hover {
+  background-color: #b6ffc1;
+  /* color: #26a69a; */
+}
+
 .btn.ghost {
   background: white;
   color: black;
+  transition: all 0.3s ease;
+}
+
+.btn.ghost:hover {
+  background-color: #b6ffc1;
+  /* color: #26a69a; */
 }

@@ -63,7 +63,12 @@ function AddProductPopUp({
       <div className="modal" role="document">
         <header className="modal-header">
           <h3 id="add-product-title">Add Product</h3>
-          <button className="modal-close" onClick={onClose} aria-label="Close">
+          <button 
+            className="modal-close" 
+            onClick={onClose} 
+            aria-label="Close"
+            style={{ border: "none"}} 
+          >
             X
           </button>
         </header>

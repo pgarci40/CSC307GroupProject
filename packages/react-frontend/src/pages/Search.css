@@ -39,7 +39,7 @@
   background: transparent;
   padding: 0;
 }
-.add-product img { display: block; }
+/* .add-product svg { display: block; } */
 
 .add-product:hover{
   background-color: #CFF7D3;

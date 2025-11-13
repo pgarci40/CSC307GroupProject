@@ -84,7 +84,7 @@ function Search({productsData, onProductAdded}){
           onClick={handleOpen}
           aria-label="Add Product"
           title="Add Product"
-          style={{ border: "none", background: "transparent" }}
+          style={{ border: "none"}}
         >
           <img src={addProductIcon} alt="" />
         </button>
