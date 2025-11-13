@@ -5,7 +5,7 @@ function AddProductPopUp({
   open,
   onClose,
   onSubmit,
-  isSubmitting = false,
+  isSubmitting,
 }) {
   const overlayRef = useRef(null);
   const [form, setForm] = useState({

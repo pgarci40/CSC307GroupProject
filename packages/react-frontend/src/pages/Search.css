@@ -1,60 +1,79 @@
-.hero {
-  height: 100vh; 
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+section.hero {
+  height: auto;        /* allow the inventory page to grow with content */
+  min-height: 100vh;   /* still fill tall screens */
+  display: block;      /* remove flex centering from Home */
+  padding: 2rem 4rem;  /* optional: match your spacing */
   background: linear-gradient(180deg, #26a69a 0%, #2e7d68 100%);
-  color: white;
-  padding-left: 4rem; 
-  margin-top: 0;
+  position: relative;     /* ensures stacking respects z-index */
+  z-index: 1;             /* keep below navbar */
+  padding-top: 90px;      /* gives space for navbar height */
 }
 
-.search-line{
-  position: fixed;
-  width:100%;
-  margin-top: -475px;
-  align-items: center;
+.search-line {
+  /* layout */
   display: flex;
-  gap:10px;
+  align-items: center;
+  justify-content: space-between;
+
+  /* placement */
+  max-width: 1200px;
+  margin: 12px auto 20px;   /* centers the row and gives bottom gap */
+  padding: 10px 12px;
+
+  /* “frosted” look like in your background */
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 12px;
+  position: sticky; top: 12px; z-index: 10;
 }
 
 .search-bar-container {
-  width: 75%;
-  margin:auto;
-  padding-left: 10%;
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
+  flex: 1;                 /* grow to fill left side */
+  max-width: 560px;        /* keep a nice width like your mock */
 }
 
 .add-product {
-  cursor: pointer;
+  margin-left: 16px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 10px;
+  padding: 0;              /* you already render it as an <img> button */
+}
+
+.results-wrap {
+  max-width: 1200px;
+  margin: 0 auto 64px;
+}
+
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+
+/* Optional: make cards a consistent height so the grid looks tidy */
+.product-card-button { width: 100%; }
+.product-card-button .product-card {
+  height: 320px;               /* pick a size that fits your content */
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* title | image | meta */
+}
+
+/* sentinel (infinite scroll trigger) */
+.grid-sentinel {
+  height: 40px;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;            /* was 1000 */
   display: flex;
   align-items: center;
-  flex-direction: column;
-  border-radius: 6px;
-  margin-right: 7.5%;
-  transition: all 0.3s ease;
-  border: none;
-  background: transparent;
-  padding: 0;
+  justify-content: center;
+  overflow: hidden;
+  animation: fadeIn .2s ease;
 }
-.add-product img { display: block; }
-
-.add-product:hover{
-  background-color: #CFF7D3;
-  color: #26a69a;
-}
-
-.results-wrap{
-  width: 100%;
-  padding: 0 4rem 3rem 10rem;
-  margin-top: 140px;              
-}
-
-.results-grid{
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 28px;
-}
-
