@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
+import './productPage.css'
 
 export default function ProductScreen() {
   // Read SKU or name from the URL: /product?SKU=ABC123 or /product?name=Widget
@@ -138,44 +139,6 @@ export default function ProductScreen() {
           </section>
         </section>
       </main>
-
-      <style>{`
-        :root{ --bg:#0b0b0b; --panel-start:#1aa37a; --panel-end:#0b5a44; --surface:#e5e7eb; --ink:#0f172a; --muted:#334155; --radius:16px; --max:1120px; }
-        *{box-sizing:border-box}
-        html, body, #root{height:100%}
-        body{margin:0; background: var(--bg); color: #fff; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif}
-        .app-shell{min-height:100%}
-        .topbar{position:sticky; top:0; z-index:5; display:flex; align-items:center; justify-content:space-between; padding:14px 20px; background:#111; border-bottom:1px solid #262626}
-        .brand{display:flex; align-items:center; gap:10px; font-weight:700}
-        .cube{font-size:18px}
-        .topbar-actions{display:flex; gap:10px}
-        .btn{appearance:none; border:1px solid transparent; border-radius:999px; padding:10px 14px; font-weight:600; cursor:pointer}
-        .btn-ghost{background:#0b2a23; color:#a7f3d0; border-color:#0f5132}
-        .btn-outline{background:#1f2937; color:#fff; border-color:#374151}
-        .btn-primary{background:#17653f; color:#fff; border-color:#17653f}
-        .btn-primary:hover{filter:brightness(1.08)}
-        .stage{display:flex; justify-content:center; padding:24px}
-        .panel{width:100%; max-width:var(--max); background: linear-gradient(160deg, var(--panel-start), var(--panel-end)); padding:28px; border-radius:8px; box-shadow: 0 10px 30px rgba(0,0,0,.35)}
-        .panel-grid{display:grid; grid-template-columns: 1.1fr 0.9fr; gap:28px; align-items:start}
-        .product-media{display:flex; align-items:center; justify-content:center}
-        .media-box{width:100%; aspect-ratio:1/1; background:#fff; color:#111; border-radius:6px; display:grid; place-items:center; font-weight:700}
-        .media-img{width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:6px; background:#fff}
-        .card{background: var(--surface); color: var(--ink); border-radius: 14px; padding:20px; box-shadow: inset 0 0 0 1px rgba(0,0,0,.06)}
-        .details .kv{margin:0; display:flex; flex-direction:column; gap:12px}
-        .details .row{display:grid; grid-template-columns: 220px 1fr; gap:10px; align-items:center}
-        .details dt{font-weight:800}
-        .details dd{margin:0; color: var(--muted); font-weight:600}
-        .details .actions{margin-top:16px}
-        .description{margin-top:22px}
-        .description h2{margin:0 0 10px 0; font-size:22px}
-        .desc-scroll{max-height:200px; overflow:auto; padding-right:6px;}
-        .desc-scroll::-webkit-scrollbar{width:10px}
-        .desc-scroll::-webkit-scrollbar-thumb{background:#cbd5e1; border-radius:999px}
-        .skeleton{height:150px; border-radius:8px; background: repeating-linear-gradient( 90deg, #e5e7eb 0, #e5e7eb 16px, #f1f5f9 16px, #f1f5f9 32px ); animation: shimmer 2s linear infinite;}
-        @keyframes shimmer{ 0%{background-position:-200px 0} 100%{background-position:200px 0}}
-        .error{color:#b91c1c; font-weight:700}
-        @media (max-width: 960px){ .panel-grid{grid-template-columns: 1fr;} }
-      `}</style>
     </div>
   );
 }
