@@ -103,7 +103,6 @@ const handleSubmit = async (payload) => {
     return () => io.disconnect();
   }, [filtered.length]);
 
-  // ...your modal/add product state stays the same
 
   return (
     <section className="hero">
@@ -118,7 +117,7 @@ const handleSubmit = async (payload) => {
           onClick={() => setOpen(true)}   // <— no separate handleOpen needed
           aria-label="Add Product"
           title="Add Product"
-          style={{ border: "none", background: "transparent" }}>
+          style={{ border: "none" }}>
           <img src={addProductIcon} alt="" />
         </button>
 

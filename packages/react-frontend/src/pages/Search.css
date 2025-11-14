@@ -30,7 +30,6 @@ section.hero {
 
 .search-bar-container {
   flex: 1;                 /* grow to fill left side */
-  max-width: 560px;        /* keep a nice width like your mock */
 }
 
 .add-product {
@@ -39,6 +38,12 @@ section.hero {
   place-items: center;
   border-radius: 10px;
   padding: 0;              /* you already render it as an <img> button */
+  background-color: transparent;
+}
+
+.add-product:hover {
+  background-color: #cff7d3;
+  color: #26a69a;
 }
 
 .results-wrap {
@@ -55,13 +60,28 @@ section.hero {
 }
 
 /* Optional: make cards a consistent height so the grid looks tidy */
-.product-card-button { width: 100%; }
+.product-card-button { 
+  width: 105%;
+  border: none;
+  border-radius: 5%;
+  background-color: transparent
+
+}
 .product-card-button .product-card {
-  height: 320px;               /* pick a size that fits your content */
+  height: 340px;               /* pick a size that fits your content */
   display: grid;
   grid-template-rows: auto 1fr auto; /* title | image | meta */
+
 }
 
+.product-card-button:hover {
+  background-color: transparent;
+  border: none;
+}
+
+.product-card:hover {
+  height: 350px;
+}
 /* sentinel (infinite scroll trigger) */
 .grid-sentinel {
   height: 40px;
