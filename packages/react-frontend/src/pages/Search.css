@@ -15,7 +15,7 @@ section.hero {
   justify-content: space-between;
 
   /* placement */
-  max-width: 1200px;
+  max-width: 1300px;
   margin: 12px auto 20px;   /* centers the row and gives bottom gap */
   padding: 10px 12px;
 
@@ -33,6 +33,7 @@ section.hero {
 
 .add-product {
   margin-left: 16px;
+  margin-top: 10px;
   display: inline-grid;
   place-items: center;
   border-radius: 10px;
@@ -46,9 +47,39 @@ section.hero {
   color: #26a69a;
 }
 
+.add-product:focus,
+.add-product:active {
+  outline: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+.remove-product {
+  margin-left: 16px;
+  margin-top: 10px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 10px;
+  padding: 0;              /* you already render it as an <img> button */
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.remove-product:hover {
+  background-color: #cff7d3;
+  color: #26a69a;
+}
+
+.remove-product:focus,
+.remove-product:active {
+  outline: none;
+  background: transparent;
+  box-shadow: none;
+}
+
 .results-wrap {
   max-width: 1200px;
-  margin: 0 auto 64px;
+  margin: 20px auto 64px;
 }
 
 .results-grid {
