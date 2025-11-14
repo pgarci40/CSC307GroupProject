@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOMClient from "react-dom/client";
 import "./main.css";
-import App from "./App1.jsx";
+import App from "./App.jsx";
 
 // Create the container
 const container = document.getElementById("root");

@@ -2,7 +2,6 @@ import React, {useState, useEffect} from "react";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 
-import NavbarSearch from "./components/Navbar_search";
 import Search from "./pages/Search";
 
 function App() {
@@ -33,7 +32,8 @@ function App() {
   
   return (
     <div>
-      <NavbarSearch />
+      {/* Set LoggedIn to false for Sign Button or true for Logout Button */ }
+      <Navbar isLoggedIn={true} showSearch={false}/>
       <Search 
         productsData={products} onProductAdded={handleProductAdded}
       />

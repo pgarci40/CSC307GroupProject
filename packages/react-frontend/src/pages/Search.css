@@ -39,6 +39,7 @@ section.hero {
   border-radius: 10px;
   padding: 0;              /* you already render it as an <img> button */
   background-color: transparent;
+  transition: all 0.3s ease;
 }
 
 .add-product:hover {
@@ -51,7 +52,6 @@ section.hero {
   margin: 0 auto 64px;
 }
 
-
 .results-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -60,18 +60,20 @@ section.hero {
 }
 
 /* Optional: make cards a consistent height so the grid looks tidy */
-.product-card-button { 
-  width: 105%;
+.product-card-button {
+  display: inline-block;       /* shrink-wraps around its child */
+  padding: 0;                  /* remove inner space */
+  margin: 0;                   /* no outer offset */
   border: none;
-  border-radius: 5%;
-  background-color: transparent
-
+  background: transparent;     
+  cursor: pointer;
+  width: 260px;
 }
-.product-card-button .product-card {
-  height: 340px;               /* pick a size that fits your content */
-  display: grid;
-  grid-template-rows: auto 1fr auto; /* title | image | meta */
 
+.product-card-button .product-card {
+  width: 260px;                /* same width as your .product-card definition */
+  height: 340px;
+  display: block;
 }
 
 .product-card-button:hover {
@@ -79,9 +81,21 @@ section.hero {
   border: none;
 }
 
-.product-card:hover {
-  height: 350px;
+/* smooth hover without reflow */
+.product-card {
+  transition: transform .18s ease, box-shadow .18s ease;
+  will-change: transform;
 }
+
+.product-card-button:hover .product-card {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 10px 24px rgba(0,0,0,.18);
+}
+
+/* .product-card:hover {
+  height: 350px;
+} */
+
 /* sentinel (infinite scroll trigger) */
 .grid-sentinel {
   height: 40px;
