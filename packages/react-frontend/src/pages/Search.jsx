@@ -117,7 +117,8 @@ const handleSubmit = async (payload) => {
           onClick={() => setOpen(true)}   // <— no separate handleOpen needed
           aria-label="Add Product"
           title="Add Product"
-          style={{ border: "none" }}>
+          style={{ border: "none" }}
+          >
           <img src={addProductIcon} alt="" />
         </button>
 
@@ -142,10 +143,8 @@ const handleSubmit = async (payload) => {
         {visible < filtered.length && <div ref={loaderRef} className="grid-sentinel" />}
       </div>
 
-      {/* Add Product modal (unchanged) */}
       <AddProductPopUp open={open} onClose={handleClose} onSubmit={handleSubmit} isSubmitting={submitting} />
 
-      {/* Product overlay (unchanged) */}
       {selected && createPortal(
         <div
           role="dialog"
